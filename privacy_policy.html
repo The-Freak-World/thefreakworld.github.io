@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+        h1 { color: #333; }
+        .lang { display: none; }
+        .menu { margin-bottom: 20px; }
+        .menu button { margin-right: 10px; padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button onclick="setLanguage('es')">Español</button>
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('fr')">Français</button>
+        <button onclick="setLanguage('pt')">Português</button>
+    </div>
+
+    <div id="es" class="lang">
+        <h1>Política de Privacidad</h1>
+        <p>Clicker Chickens no recopila, almacena ni comparte información personal de los usuarios.</p>
+        <h2>1. Información General</h2>
+        <p>No recopilamos datos personales mientras juegas.</p>
+        <h2>2. Publicidad y Servicios de Terceros</h2>
+        <p>Si Clicker Chickens usa anuncios o servicios de terceros, estos pueden tener sus propias políticas.</p>
+        <h2>3. Contacto</h2>
+        <p>Si tienes dudas, puedes contactarnos en: thefreakworld99@gmail.com</p>
+    </div>
+
+    <div id="en" class="lang">
+        <h1>Privacy Policy</h1>
+        <p>This game does not collect, store, or share users' personal information.</p>
+        <h2>1. General Information</h2>
+        <p>We do not collect personal data while you play.</p>
+        <h2>2. Advertising and Third-Party Services</h2>
+        <p>If Clicker Chickens includes ads or third-party services, they may have their own policies.</p>
+        <h2>3. Contact</h2>
+        <p>If you have any questions, you can contact us at: thefreakworld99@gmail.com</p>
+    </div>
+
+    <div id="fr" class="lang">
+        <h1>Politique de confidentialité</h1>
+        <p>Clicker Chickens ne collecte, ne stocke ni ne partage les informations personnelles des utilisateurs.</p>
+        <h2>1. Informations générales</h2>
+        <p>Nous ne collectons aucune donnée personnelle pendant que vous jouez.</p>
+        <h2>2. Publicité et services tiers</h2>
+        <p>Si Clicker Chickens inclut des annonces ou des services tiers, ils peuvent avoir leurs propres politiques.</p>
+        <h2>3. Contact</h2>
+        <p>Si vous avez des questions, vous pouvez nous contacter à : thefreakworld99@gmail.com</p>
+    </div>
+
+    <div id="pt" class="lang">
+        <h1>Política de Privacidade</h1>
+        <p>Clicker Chickens não coleta, armazena ou compartilha informações pessoais dos usuários.</p>
+        <h2>1. Informações Gerais</h2>
+        <p>Não coletamos dados pessoais enquanto você joga.</p>
+        <h2>2. Publicidade e Serviços de Terceiros</h2>
+        <p>Se Clicker Chickens incluir anúncios ou serviços de terceiros, eles podem ter suas próprias políticas.</p>
+        <h2>3. Contato</h2>
+        <p>Se você tiver dúvidas, pode nos contatar em: thefreakworld99@gmail.com</p>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+            document.getElementById(lang).style.display = 'block';
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        let userLang = localStorage.getItem('selectedLanguage') || navigator.language.substring(0, 2);
+        if (!['es', 'en', 'fr', 'pt'].includes(userLang)) userLang = 'en';
+        setLanguage(userLang);
+    </script>
+</body>
+</html>
